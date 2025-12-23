@@ -1,4 +1,14 @@
 from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {
+        "status": "Trading Signal Backend Live",
+        "message": "API working successfully"
+    }
+from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse
 import requests, pandas as pd
 from ta.momentum import RSIIndicator
